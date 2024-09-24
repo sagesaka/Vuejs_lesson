@@ -13,6 +13,12 @@ const info = ref({
   students: 1000,
   rating: 5
 })
+
+const instructor = reactive({
+  name: 'Sagesaka',
+  age: 25
+})
+console.log(instructor.age)
 console.log(info.value.students)
 </script>
 
@@ -20,7 +26,7 @@ console.log(info.value.students)
   <h1>title: {{ title }}</h1>
   <h2>price: ${{ price }}</h2>
   <h2>Students: {{ info.students }}</h2>
-
+  <h2>Instructor: {{ instructor.name }}({{ instructor.age }})</h2>
   <button @click="increment">ボタン</button>
 </template>
 
