@@ -18,6 +18,13 @@ const instructor = reactive({
   name: 'Sagesaka',
   age: 25
 })
+
+const instructor_info = reactive({
+  name: 'Sagesaka',
+  sns: {
+    twitter: 'sageru'
+  }
+})
 console.log(instructor.age)
 console.log(info.value.students)
 </script>
@@ -27,6 +34,7 @@ console.log(info.value.students)
   <h2>price: ${{ price }}</h2>
   <h2>Students: {{ info.students }}</h2>
   <h2>Instructor: {{ instructor.name }}({{ instructor.age }})</h2>
+  <h2>Twitter: {{ instructor_info.sns.twitter }}</h2>
   <button @click="increment">ボタン</button>
 </template>
 
