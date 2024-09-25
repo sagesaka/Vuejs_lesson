@@ -1,7 +1,3 @@
-<template>
-  <Lesson />
-</template>
+<template></template>
 
-<script setup>
-import Lesson from './components/Lesson.vue'
-</script>
+<script setup></script>
