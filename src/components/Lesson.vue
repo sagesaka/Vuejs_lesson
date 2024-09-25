@@ -25,6 +25,12 @@ const instructor_info = reactive({
     twitter: 'sageru'
   }
 })
+
+const courseInfo = {
+  sections: ref(10),
+  language: ref('Japanese')
+}
+console.log(courseInfo.sections.value)
 console.log(instructor.age)
 console.log(info.value.students)
 </script>
@@ -35,6 +41,11 @@ console.log(info.value.students)
   <h2>Students: {{ info.students }}</h2>
   <h2>Instructor: {{ instructor.name }}({{ instructor.age }})</h2>
   <h2>Twitter: {{ instructor_info.sns.twitter }}</h2>
+  <h2>{{ courseInfo.language.value }} Course</h2>
+  <p>
+    普通のオブジェクトの中のrefオブジェクトはtemplateタグ内でrefオブジェクトとして認識されないため、.valueをつける
+  </p>
+  <p>一番上(先頭)のオブジェクトを見て、refオブジェクトかどうか判断するよ</p>
   <button @click="increment">ボタン</button>
 </template>
 
