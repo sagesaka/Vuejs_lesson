@@ -36,12 +36,21 @@
     <h3>右に表示されます:{{ userInput }}</h3>
     <p>v-modelでフォームに入力されたデータを取得！</p>
     <h2>----------</h2>
+    <h3>Good or Bad はscriptタグ内に処理をまとめたよ！これはcomputedのおかげだよ！</h3>
+    <p>{{ evalution }}</p>
+    <p>{{ score }}</p>
+    <button @click="score++">+1</button>
+    <h2>----------</h2>
   </div>
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 
+const score = ref(0)
+const evalution = computed(() => {
+  return score.value > 3 ? 'Good' : 'Bad'
+})
 const vueURL = ref('https://vue.js.org')
 const count = ref(5)
 const message = ref('<h2>Hello, Vue.js</h2>')
