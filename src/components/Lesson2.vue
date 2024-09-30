@@ -41,11 +41,15 @@
     <p>{{ score }}</p>
     <button @click="score++">+1</button>
     <h2>----------</h2>
+    <h3>ウォッチエフェクトです</h3>
+    <p>{{ count }}</p>
+    <button @click="count++">+1</button>
+    <p>ウォッチエフェクトとウォッチの違いは明示的に監視したいデータを指定するか否かの違いです。</p>
   </div>
 </template>
 
 <script setup>
-import { computed, ref } from 'vue'
+import { computed, ref, watchEffect } from 'vue'
 
 const score = ref(0)
 const evalution = computed(() => {
@@ -59,6 +63,11 @@ const userInput = ref('')
 function countUp() {
   count.value *= 2
 }
+
+watchEffect(() => {
+  console.log('watchEffect')
+  console.log(count.value)
+})
 </script>
 
 <style scoped>
