@@ -45,6 +45,11 @@
     <p>{{ count }}</p>
     <button @click="count++">+1</button>
     <p>ウォッチエフェクトとウォッチの違いは明示的に監視したいデータを指定するか否かの違いです。</p>
+    <h2>----------</h2>
+    <div :class="{ white: true, 'bl-bg': true }">htmlとcssをv-bindさせるお！</div>
+    <p :class="{ red: true, white: true }">
+      クラス名にハイフンがつく場合、シングルクォーテーションで囲む
+    </p>
   </div>
 </template>
 
@@ -75,5 +80,15 @@ h2,
 h3,
 p {
   margin: 0;
+}
+
+.bl-bg {
+  background-color: black;
+}
+.white {
+  color: white;
+}
+.red {
+  background-color: red;
 }
 </style>
