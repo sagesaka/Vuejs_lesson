@@ -46,10 +46,11 @@
     <button @click="count++">+1</button>
     <p>ウォッチエフェクトとウォッチの違いは明示的に監視したいデータを指定するか否かの違いです。</p>
     <h2>----------</h2>
-    <div :class="{ white: true, 'bl-bg': true }">htmlとcssをv-bindさせるお！</div>
+    <div :class="{ white: isWhite, 'bl-bg': isBlBlack }">htmlとcssをv-bindさせるお！</div>
     <p :class="{ red: true, white: true }">
       クラス名にハイフンがつく場合、シングルクォーテーションで囲む
     </p>
+    <button @click="toggleClass">ナイトモーーーーード！</button>
   </div>
 </template>
 
@@ -73,6 +74,13 @@ watchEffect(() => {
   console.log('watchEffect')
   console.log(count.value)
 })
+
+const isBlBlack = ref(true)
+const isWhite = ref(true)
+function toggleClass() {
+  isBlBlack.value = !isBlBlack.value
+  isWhite.value = !isWhite.value //clickイベント。クリックしたらisWhiteのvalueが更新(書き換えられる)
+}
 </script>
 
 <style scoped>
